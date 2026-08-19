@@ -22,9 +22,7 @@ public class Enemy : MonoBehaviour
     private void OnDisable()
     {
         if (_coroutine == null)
-        {
             return;
-        }
 
         StopCoroutine(_coroutine);
     }

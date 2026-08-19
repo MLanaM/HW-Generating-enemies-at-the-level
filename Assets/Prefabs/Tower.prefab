@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 138066883466248710}
   - component: {fileID: 6168570078528026522}
   - component: {fileID: 543011957294448552}
-  - component: {fileID: -6028199107042881252}
+  - component: {fileID: 8984044098323854011}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6028199107042881252
+--- !u!114 &8984044098323854011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +93,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4544352629567200076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a34f906a891174bbd4b1bfcdfd0f38, type: 3}
+  m_Script: {fileID: 11500000, guid: dad87b26aec22144589d419ab0b9d2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 8066955595955281031, guid: 810b3e4f2da27c642b4aa91228655584, type: 3}
