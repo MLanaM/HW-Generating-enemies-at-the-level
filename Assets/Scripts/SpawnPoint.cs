@@ -2,14 +2,7 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemyPrefab;
+    [field: SerializeField] public Enemy EnemyPrefab { get; private set; }
 
-    public Vector3 Position { get; private set; }
-    public Enemy EnemyPrefab { get; private set; }
-
-    private void Awake()
-    {
-        Position = transform.position;
-        EnemyPrefab = _enemyPrefab;
-    }
+    public Vector3 Position => transform.position;
 }

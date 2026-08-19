@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efdc3203db7f054186a0fdc5c07424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 8066955595955281031, guid: 810b3e4f2da27c642b4aa91228655584, type: 3}
+  <EnemyPrefab>k__BackingField: {fileID: 8066955595955281031, guid: 810b3e4f2da27c642b4aa91228655584, type: 3}
+  <Position>k__BackingField: {x: 0, y: 0, z: 0}
