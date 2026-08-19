@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 47015920}
   - component: {fileID: 47015916}
   - component: {fileID: 47015919}
-  - component: {fileID: 47015921}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -155,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factory: {fileID: 47015919}
-  _spawnPoint: {fileID: 47015921}
-  _tower: {fileID: 8984044098323854011, guid: 550cdc825007b624eb2dee64ee9434cb, type: 3}
+  _spawnPointPrefab: {fileID: 555618095602910574, guid: f78acfa23161c2445b6f11b11de5bf1c, type: 3}
+  _towerPrefab: {fileID: 8984044098323854011, guid: 550cdc825007b624eb2dee64ee9434cb, type: 3}
 --- !u!4 &47015917
 Transform:
   m_ObjectHideFlags: 0
@@ -226,19 +225,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &47015921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47015915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5efdc3203db7f054186a0fdc5c07424e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 8066955595955281031, guid: 810b3e4f2da27c642b4aa91228655584, type: 3}
 --- !u!1 &102146800
 GameObject:
   m_ObjectHideFlags: 0

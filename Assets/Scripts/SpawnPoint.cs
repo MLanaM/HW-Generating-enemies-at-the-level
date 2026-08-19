@@ -7,13 +7,9 @@ public class SpawnPoint : MonoBehaviour
     public Vector3 Position { get; private set; }
     public Enemy EnemyPrefab { get; private set; }
 
-    public void SetPosition(Vector3 position)
-    {
-        Position = position;
-    }
-
     private void Awake()
     {
+        Position = transform.position;
         EnemyPrefab = _enemyPrefab;
     }
 }

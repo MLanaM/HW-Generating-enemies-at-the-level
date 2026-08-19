@@ -5,10 +5,12 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Factory _factory;
-    [SerializeField] private SpawnPoint _spawnPoint;
-    [SerializeField] private Tower _tower;
+    [SerializeField] private SpawnPoint _spawnPointPrefab;
+    [SerializeField] private Tower _towerPrefab;
 
     private List<Vector3> _spawnPositions;
+    private List<SpawnPoint> _spawnPoints;
+
     private Coroutine _coroutine;
 
     private void Awake()
@@ -29,6 +31,7 @@ public class Spawner : MonoBehaviour
     private void CreateSpawnPoints()
     {
         FillSpawnPositions();
+        FillSpawnPoints();
         DrawTowers();
     }
 
@@ -43,11 +46,22 @@ public class Spawner : MonoBehaviour
         };
     }
 
+    private void FillSpawnPoints()
+    {
+        _spawnPoints = new List<SpawnPoint>();
+
+        foreach (Vector3 position in _spawnPositions)
+        {
+            SpawnPoint spawnPoint = Instantiate(_spawnPointPrefab, position, Quaternion.identity);
+            _spawnPoints.Add(spawnPoint);
+        }
+    }
+
     private void DrawTowers()
     {
         foreach (Vector3 position in _spawnPositions)
         {
-            Tower tower = Instantiate(_tower, position, Quaternion.identity);
+            Tower tower = Instantiate(_towerPrefab, position, Quaternion.identity);
             tower.Init(position);
         }
     }
@@ -55,21 +69,16 @@ public class Spawner : MonoBehaviour
     private IEnumerator CreateEnemy()
     {
         WaitForSeconds wait = new WaitForSeconds(2f);
-        Vector3 spawnPosition;
-        Vector3 rotation;
+        SpawnPoint spawnPoint;
+        Vector3 direction;
 
         while (enabled)
         {
-            spawnPosition = _spawnPositions[Random.Range(0, _spawnPositions.Count)];
-            rotation = new Vector3(0, Random.Range(0, 360), 0);
+            spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
+            direction = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
 
-            _spawnPoint.SetPosition(spawnPosition);
-            SpawnEnemy(rotation);
-
+            _factory.SpawnEnemy(spawnPoint, direction);
             yield return wait;
         }
     }
-
-    private void SpawnEnemy(Vector3 rotation) =>
-        _factory.SpawnEnemy(_spawnPoint, rotation);
 }
